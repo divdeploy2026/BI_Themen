@@ -1,0 +1,457 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Mein Statement zum Gaskraftwerk</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Archivo+Black&family=Arimo:wght@700&family=Ubuntu:wght@700&display=swap">
+<style>
+/* Layout: weiße BI-Kopfleiste, darunter links die Statement-Grafik (direkt beschreibbar), rechts das Bedienfeld */
+:root{
+  --bg:#f6f4f2; --panel:#ffffff; --fg:#232826; --muted:#5d6661; --line:#dcd8d3;
+  --rot:#CD281E; --gruen:#1E5A2B; --hellgruen:#6DB33F; --warn:#c77700;
+  --chip:#eef3ec; --chip-fg:#1E5A2B; --focus:#2f7d3c;
+  --f-ui:"Inter",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#161a18; --panel:#1f2522; --fg:#e9ece9; --muted:#a3aca7; --line:#343c38;
+  --chip:#24362a; --chip-fg:#a9d79a; --warn:#f0a43a; --focus:#7cc56a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#161a18; --panel:#1f2522; --fg:#e9ece9; --muted:#a3aca7; --line:#343c38;
+  --chip:#24362a; --chip-fg:#a9d79a; --warn:#f0a43a; --focus:#7cc56a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-ui);font-size:15px;line-height:1.5}
+/* Kopfleiste wie bei den anderen BI-Seiten (bewusst immer weiß) */
+.kopf{background:#fff;border-bottom:6px solid var(--hellgruen);text-align:center;padding-block:18px 14px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.kopf .z1{font-weight:900;letter-spacing:.06em;font-size:clamp(20px,4.2vw,30px);line-height:1.1;margin:0}
+.kopf .z1 .r{color:#CD281E}.kopf .z1 .g{color:#1E5A2B}
+.kopf hr{border:0;border-top:2px solid #1E5A2B;width:min(420px,80%);margin:8px auto}
+.kopf .z2{font-weight:800;font-size:clamp(17px,3.4vw,24px);color:#232826;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-block:22px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:28px;align-items:start}
+@media (max-width:900px){.wrap{grid-template-columns:minmax(0,1fr)}}
+.intro{grid-column:1/-1;margin:0;color:var(--muted);max-width:70ch}
+.intro b{color:var(--fg)}
+/* Grafik */
+.vorschau{position:relative;min-width:0}
+.buehne-rahmen{width:100%;max-width:100%;position:relative;overflow:hidden;border-radius:6px;box-shadow:0 2px 14px rgba(0,0,0,.14)}
+.buehne{position:absolute;left:0;top:0;width:1080px;height:1350px;transform-origin:0 0;background:#fff}
+.buehne canvas{position:absolute;left:0;top:0;width:1080px;height:1350px}
+#textBox{position:absolute;left:90px;top:462px;width:900px;height:672px;display:flex;align-items:center;justify-content:center}
+#textBox.ueberlauf{outline:6px dashed #e0892a;outline-offset:6px}
+#txt{width:100%;max-height:none;text-align:center;font-family:"Arimo",Arial,"Helvetica Neue",Helvetica,sans-serif;font-weight:700;
+  color:#111;line-height:1.25;white-space:pre-wrap;overflow-wrap:anywhere;outline:none;cursor:text;caret-color:#CD281E;min-height:1.25em}
+#txt:empty::before{content:attr(data-ph);color:#9aa09c;pointer-events:none}
+#nameBox{position:absolute;left:70px;top:1196px;width:940px;height:100px;display:flex;align-items:center;justify-content:center;
+  white-space:nowrap;font-family:"Ubuntu","Trebuchet MS",Arial,sans-serif;font-weight:700;color:#306F1E;line-height:1.1}
+#nameTxt{outline:none;cursor:text;caret-color:#CD281E;display:inline-block;min-width:20px}
+#nameTxt:empty::before{content:attr(data-ph);color:#9aa09c}
+.buehne [contenteditable]:focus{background:rgba(109,179,63,.08);border-radius:6px}
+.hinweis-klein{font-size:13px;color:var(--muted);margin:8px 2px 0}
+/* Bedienfeld */
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:18px;min-width:0}
+.gruppe{display:flex;flex-direction:column;gap:8px}
+.gruppe h2{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:0;font-weight:800}
+.zaehler{display:flex;justify-content:space-between;gap:10px;font-variant-numeric:tabular-nums;font-size:14px;flex-wrap:wrap}
+.zaehler b{font-weight:800}
+.balken{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.balken i{display:block;height:100%;width:0;background:var(--hellgruen);transition:width .15s}
+.balken.fast i{background:var(--warn)}.balken.voll i{background:var(--rot)}
+.reihe{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+button,.btn{font:inherit;font-weight:600;border-radius:10px;border:1px solid var(--line);background:var(--panel);color:var(--fg);
+  padding:9px 14px;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;text-align:center}
+button:hover,.btn:hover{border-color:var(--focus)}
+button:focus-visible,.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+button[aria-pressed="true"]{background:var(--chip);color:var(--chip-fg);border-color:var(--chip-fg)}
+.btn.haupt{background:#CD281E;border-color:#CD281E;color:#fff;font-weight:800;font-size:16px;padding:14px 16px;width:100%;line-height:1.3}
+.btn.haupt:hover{background:#b0211a}
+.btn.haupt[aria-disabled="true"]{background:var(--line);border-color:var(--line);color:var(--muted);cursor:not-allowed}
+input[type=range]{flex:1;min-width:120px;accent-color:#1E5A2B}
+.mobil-eingabe{display:none}
+@media (max-width:700px){.mobil-eingabe{display:flex}}
+textarea,input[type=text]{font:inherit;width:100%;border:1px solid var(--line);border-radius:10px;padding:10px;background:var(--bg);color:var(--fg)}
+textarea{min-height:140px;resize:vertical}
+.check{display:flex;gap:10px;align-items:flex-start;font-size:14px}
+.check input{margin-top:4px;width:18px;height:18px;accent-color:#1E5A2B;flex:none}
+fieldset.kontakt{border:1px solid var(--line);border-radius:12px;padding:14px;margin:0}
+fieldset.kontakt legend{padding:0 6px}
+.feld{display:flex;flex-direction:column;gap:4px;font-size:14px;font-weight:600;min-width:0}
+.feld input{font-weight:400}
+.plzort{display:grid;grid-template-columns:minmax(0,7rem) minmax(0,1fr);gap:10px}
+.fehlt{font-size:13px;color:var(--muted);margin:0}
+.ersatz{font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:8px}
+.ersatz code{font-family:var(--f-ui);font-weight:700;color:var(--fg);user-select:all}
+.banner{background:var(--chip);color:var(--chip-fg);border-radius:10px;padding:12px 14px;font-size:14px}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:#232826;color:#fff;
+  padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;transition:opacity .2s;pointer-events:none;max-width:90vw}
+.toast.an{opacity:1}
+#ausweich{width:100%;min-height:120px;font-size:12px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<header class="kopf">
+  <p class="z1"><span class="r">GASKRAFTWERK</span> <span class="g">SCHLÜCHTERN</span></p>
+  <hr>
+  <p class="z2">Mein Statement</p>
+</header>
+
+<main class="wrap">
+  <p class="intro"><b>Warum lehnen Sie das Gaskraftwerk ab?</b> Schreiben Sie es direkt in die Mitte der Grafik, tragen Sie unten Ihren Namen ein und schicken Sie Ihr Statement an die Bürgerinitiative. Die Schrift passt sich automatisch an.</p>
+
+  <section class="vorschau" aria-label="Statement-Grafik">
+    <div class="buehne-rahmen" id="rahmen">
+      <div class="buehne" id="buehne">
+        <canvas id="grund" width="1080" height="1350" aria-hidden="true"></canvas>
+        <div id="textBox"><div id="txt" role="textbox" aria-multiline="true" aria-label="Ihr Statement" spellcheck="true" lang="de"
+          data-ph="Hier klicken und Ihr Statement schreiben: Warum lehnen Sie das Gaskraftwerk in Schlüchtern ab?"></div></div>
+        <div id="nameBox"><span id="nameTxt" role="textbox" aria-label="Ihr Name" data-ph="Ihr Vor- und Nachname"></span><span id="nameZusatz" hidden>, BI Schlüchtern</span></div>
+      </div>
+    </div>
+    <p class="hinweis-klein">Format 1080 × 1350 Pixel (4:5), passend für Instagram und Facebook.</p>
+  </section>
+
+  <section class="panel" aria-label="Eingabe und Versand">
+    <div class="banner" id="banner" hidden>Dieses Statement wurde über einen Link geöffnet. Sie können es als Bild speichern oder weiter bearbeiten.</div>
+
+    <div class="gruppe mobil-eingabe">
+      <h2><label for="txtMobil">Ihr Statement</label></h2>
+      <textarea id="txtMobil" placeholder="Warum lehnen Sie das Gaskraftwerk in Schlüchtern ab?"></textarea>
+    </div>
+
+    <div class="gruppe">
+      <h2>Text</h2>
+      <div class="zaehler"><span><b id="zGenutzt">0</b> von <span id="zMax">500</span> Zeichen genutzt</span><span>noch <b id="zFrei">500</b> frei</span></div>
+      <div class="balken" id="balken"><i></i></div>
+    </div>
+
+    <div class="gruppe">
+      <h2>Schriftgröße</h2>
+      <div class="reihe">
+        <button type="button" id="autoBtn" aria-pressed="true">Automatisch</button>
+        <button type="button" id="kleiner" aria-label="Schrift kleiner">A−</button>
+        <input type="range" id="groesse" min="24" max="80" step="1" value="48" aria-label="Schriftgröße">
+        <button type="button" id="groesser" aria-label="Schrift größer">A+</button>
+      </div>
+      <p class="fehlt" id="groesseInfo">Automatisch: die Schrift füllt den Bereich in der Mitte.</p>
+    </div>
+
+    <div class="gruppe">
+      <h2><label for="nameMobil">Name</label></h2>
+      <input type="text" id="nameMobil" maxlength="40" placeholder="Vor- und Nachname" autocomplete="name">
+      <div class="zaehler"><span><b id="nGenutzt">0</b> von <span id="nMax">40</span> Zeichen</span></div>
+      <div class="reihe"><button type="button" id="biBtn" aria-pressed="false">+ „BI Schlüchtern“ anhängen</button></div>
+    </div>
+
+    <fieldset class="gruppe kontakt">
+      <legend><h2>Ihre Kontaktdaten für die BI</h2></legend>
+      <p class="fehlt">Nur für die Rückfrage durch die BI. Kontaktdaten werden nicht veröffentlicht und stehen nicht im Link zur Grafik.</p>
+      <label class="feld" for="kName">Name<input type="text" id="kName" autocomplete="name" maxlength="80"></label>
+      <label class="feld" for="kStrasse">Straße / Hausnummer<input type="text" id="kStrasse" autocomplete="street-address" maxlength="80"></label>
+      <div class="plzort">
+        <label class="feld" for="kPlz">PLZ<input type="text" id="kPlz" autocomplete="postal-code" inputmode="numeric" maxlength="5" placeholder="36381"></label>
+        <label class="feld" for="kOrt">Wohnort<input type="text" id="kOrt" autocomplete="address-level2" maxlength="60" placeholder="Schlüchtern"></label>
+      </div>
+    </fieldset>
+
+    <div class="gruppe">
+      <label class="check"><input type="checkbox" id="einv"> <span>Ich bin einverstanden, dass die Bürgerinitiative Lebenswertes Schlüchtern mein Statement mit meinem Namen veröffentlicht.</span></label>
+    </div>
+
+    <div class="gruppe">
+      <a class="btn haupt" id="senden" href="#" aria-disabled="true">Sende mein Statement zur Veröffentlichung an die BI Schlüchtern</a>
+      <p class="fehlt" id="fehlt">Noch nötig: Text, Name, Einverständnis.</p>
+    </div>
+
+    <div class="reihe">
+      <button type="button" id="pngBtn">Grafik als Bild speichern</button>
+      <button type="button" id="linkBtn">Link zum Statement kopieren</button>
+    </div>
+
+    <div class="ersatz">
+      <span>Öffnet sich kein Mailprogramm? Dann den Mailtext kopieren und an <code id="adresse">info@bi-schluechtern.de</code> schicken.</span>
+      <div class="reihe"><button type="button" id="mailKopieren">Mailtext kopieren</button></div>
+      <textarea id="ausweich" readonly hidden aria-label="Mailtext zum Kopieren"></textarea>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+/* ====== EINSTELLUNGEN ====== */
+const EINSTELLUNGEN = {
+  mailAn: "info@bi-schluechtern.de",
+  betreff: "Mein Statement: Warum ich das Gaskraftwerk in Schlüchtern ablehne",
+  maxText: 500,          // Zeichen im Statement
+  maxName: 40,           // Zeichen im Namen (ohne Zusatz)
+  zusatz: ", BI Schlüchtern",
+  minText: 20,
+  // Adresse dieser Seite für den Link in der Mail. Leer = eigene Adresse (z. B. auf GitHub Pages).
+  // Innerhalb von claude.ai wird immer diese Adresse verwendet.
+  seitenUrl: "https://claude.ai/artifact/B2Mi1K6Ye5hiMnmkJwZMkf",
+  mailtoMax: 1900        // längere Mail-Links funktionieren nicht in allen Mailprogrammen
+};
+const KOPF = ["WARUM ICH DAS","GASKRAFTWERK IN","SCHLÜCHTERN","ABLEHNE"];
+const FARBE = {rot:"#DB2F21", gruen:"#306F1E", text:"#111111"};
+const BOX = {x:90, y:462, w:900, h:672};
+const NAME = {x:70, y:1196, w:940, h:100, max:56, min:28};
+const LH = 1.25, AUTO_MAX = 64, AUTO_MIN = 24, START = 48;
+
+const $ = id => document.getElementById(id);
+const txt=$("txt"), nameTxt=$("nameTxt"), nameZusatz=$("nameZusatz");
+const st = {auto:true, fs:START, bi:false};
+
+/* ---------- Hintergrund (Rahmen, Kopf, Linien) ---------- */
+function zeichneGrund(ctx){
+  ctx.fillStyle="#fff"; ctx.fillRect(0,0,1080,1350);
+  ctx.strokeStyle=FARBE.gruen; ctx.lineWidth=11; ctx.strokeRect(27,27,1026,1296);
+  let fs=92; ctx.font=`${fs}px "Archivo Black", "Arial Black", sans-serif`;
+  const breit=Math.max(...KOPF.map(z=>ctx.measureText(z).width));
+  if(breit>930){ fs=Math.floor(fs*930/breit); ctx.font=`${fs}px "Archivo Black", "Arial Black", sans-serif`; }
+  ctx.fillStyle=FARBE.rot; ctx.textAlign="center"; ctx.textBaseline="alphabetic";
+  const lh=fs*0.98, oben=70+fs*0.74;
+  KOPF.forEach((z,i)=>ctx.fillText(z,540,oben+i*lh));
+  ctx.fillStyle=FARBE.gruen; ctx.fillRect(80,418,920,9); ctx.fillRect(80,1160,920,9);
+}
+
+/* ---------- Text lesen / Länge ---------- */
+const len = s => [...s].length;
+function textWert(){ return (txt.innerText||"").replace(/ /g," ").replace(/\n$/,""); }
+function nameWert(){ return (nameTxt.textContent||"").replace(/ /g," ").replace(/[\r\n]+/g," "); }
+function zeigeName(){ return nameWert().trim() + (st.bi ? EINSTELLUNGEN.zusatz : ""); }
+
+/* ---------- Schrift anpassen ---------- */
+function passt(){ return txt.scrollHeight <= BOX.h + 1; }
+function setFs(n){ txt.style.fontSize=n+"px"; }
+function anpassen(){
+  if(st.auto){
+    let lo=AUTO_MIN, hi=AUTO_MAX, best=AUTO_MIN;
+    if(!textWert().trim()){ best=START; }
+    else { while(lo<=hi){ const m=(lo+hi)>>1; setFs(m); if(passt()){best=m;lo=m+1;} else hi=m-1; } }
+    st.fs=best; $("groesse").value=best;
+  }
+  setFs(st.fs);
+  const ok=passt();
+  $("textBox").classList.toggle("ueberlauf",!ok);
+  $("groesseInfo").textContent = !ok
+    ? (st.auto ? "Der Text ist auch bei kleinster Schrift zu lang. Bitte etwas kürzen." : "Der Text passt bei dieser Größe nicht ganz. Schrift kleiner stellen oder „Automatisch“ wählen.")
+    : (st.auto ? `Automatisch: ${st.fs} px, die Schrift füllt den Bereich in der Mitte.` : `Eigene Größe: ${st.fs} px.`);
+  // Name einpassen
+  let nf=NAME.max; nameBoxFs(nf);
+  const box=$("nameBox"); const inhalt=()=>nameTxt.offsetWidth+(st.bi?nameZusatz.offsetWidth:0);
+  while(nf>NAME.min && inhalt()>NAME.w-10){ nf-=1; nameBoxFs(nf); }
+  st.nfs=nf;
+}
+function nameBoxFs(n){ $("nameBox").style.fontSize=n+"px"; }
+
+/* ---------- Eingabegrenzen für die Grafik-Felder ---------- */
+function auswahlLaenge(el){ const s=getSelection(); if(!s.rangeCount||!el.contains(s.anchorNode))return 0; return len(s.toString()); }
+function begrenze(el, max, einzeilig){
+  el.addEventListener("beforeinput",e=>{
+    if(einzeilig && (e.inputType==="insertParagraph"||e.inputType==="insertLineBreak")){e.preventDefault();return;}
+    if(!e.inputType.startsWith("insert")||e.inputType==="insertFromPaste")return;
+    const neu = e.data ? len(e.data) : 1;
+    const aktuell = len(einzeilig?nameWert():textWert());
+    if(aktuell-auswahlLaenge(el)+neu>max){e.preventDefault();toast(`Höchstens ${max} Zeichen`);}
+  });
+  el.addEventListener("paste",e=>{
+    e.preventDefault();
+    let t=(e.clipboardData||window.clipboardData).getData("text/plain")||"";
+    if(einzeilig)t=t.replace(/\s+/g," ");
+    t=t.replace(/\r\n?/g,"\n");
+    const frei=max-(len(einzeilig?nameWert():textWert())-auswahlLaenge(el));
+    const z=[...t]; if(z.length>frei){t=z.slice(0,Math.max(0,frei)).join("");toast(`Eingefügter Text wurde auf ${max} Zeichen gekürzt`);}
+    if(t)document.execCommand("insertText",false,t);
+  });
+  el.addEventListener("input",()=>{
+    const w=einzeilig?nameWert():textWert();
+    if(len(w)>max){ el.textContent=[...w].slice(0,max).join(""); cursorAnsEnde(el); }
+    if(!el.textContent.trim() && el.innerHTML!=="" && !el.textContent) el.innerHTML="";
+    aktualisieren("grafik");
+  });
+}
+function cursorAnsEnde(el){ const r=document.createRange(); r.selectNodeContents(el); r.collapse(false); const s=getSelection(); s.removeAllRanges(); s.addRange(r); }
+function editierbar(el){ try{ el.contentEditable="plaintext-only"; if(el.contentEditable!=="plaintext-only") throw 0; }catch(_){ el.contentEditable="true"; } }
+
+/* ---------- Gesamt-Aktualisierung ---------- */
+function aktualisieren(quelle){
+  const t=textWert(), n=nameWert();
+  if(quelle!=="mobil" && $("txtMobil").value!==t) $("txtMobil").value=t;
+  if(quelle!=="nameMobil" && $("nameMobil").value!==n) $("nameMobil").value=n;
+  if(!t && txt.innerHTML) txt.innerHTML="";
+  if(!n && nameTxt.innerHTML) nameTxt.innerHTML="";
+  const g=len(t), max=EINSTELLUNGEN.maxText;
+  $("zGenutzt").textContent=g; $("zFrei").textContent=Math.max(0,max-g);
+  const b=$("balken"); b.firstElementChild.style.width=Math.min(100,g/max*100)+"%";
+  b.classList.toggle("fast",g>=max*0.9&&g<max); b.classList.toggle("voll",g>=max);
+  $("nGenutzt").textContent=len(n);
+  nameZusatz.hidden=!st.bi;
+  anpassen();
+  pruefeSenden();
+  entwurfSpeichern();
+  planeLink();
+}
+let kNameEigen=false;
+function pruefeSenden(){
+  if(!kNameEigen) $("kName").value=nameWert().trim();
+  const fehlt=[];
+  if(len(textWert().trim())<EINSTELLUNGEN.minText) fehlt.push(`Text (mindestens ${EINSTELLUNGEN.minText} Zeichen)`);
+  if(len(nameWert().trim())<2) fehlt.push("Name");
+  if(!$("kName").value.trim()) fehlt.push("Name bei den Kontaktdaten");
+  if(!$("einv").checked) fehlt.push("Einverständnis");
+  $("senden").setAttribute("aria-disabled", fehlt.length?"true":"false");
+  $("fehlt").textContent = fehlt.length ? "Noch nötig: "+fehlt.join(", ")+"." : "Ihr Mailprogramm öffnet sich mit einem vorbereiteten Text. Bitte prüfen und absenden.";
+  return !fehlt.length;
+}
+
+/* ---------- Statement in einen Link packen (#st-…) ---------- */
+const B62="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+function zuB62(bytes){ let n=0n; for(const b of bytes) n=(n<<8n)|BigInt(b); let s=""; while(n>0n){ s=B62[Number(n%62n)]+s; n/=62n; } return s||"0"; }
+function vonB62(s){ let n=0n; for(const c of s){ const i=B62.indexOf(c); if(i<0) throw new Error("Zeichen"); n=n*62n+BigInt(i); } let h=n.toString(16); if(h.length%2)h="0"+h; const a=new Uint8Array(h.length/2); for(let i=0;i<a.length;i++)a[i]=parseInt(h.substr(i*2,2),16); return a; }
+async function strom(bytes, Art, modus){ const s=new Blob([bytes]).stream().pipeThrough(new Art(modus)); return new Uint8Array(await new Response(s).arrayBuffer()); }
+async function packen(obj){
+  const roh=new TextEncoder().encode(JSON.stringify(obj));
+  let kenn=1, daten=roh;
+  try{ if("CompressionStream" in window){ const z=await strom(roh,CompressionStream,"deflate-raw"); if(z.length<roh.length){kenn=2;daten=z;} } }catch(_){}
+  const a=new Uint8Array(daten.length+1); a[0]=kenn; a.set(daten,1); return "st-"+zuB62(a);
+}
+async function entpacken(name){
+  const a=vonB62(name.slice(3)); const kenn=a[0]; let d=a.slice(1);
+  if(kenn===2) d=await strom(d,DecompressionStream,"deflate-raw");
+  else if(kenn!==1) throw new Error("Version");
+  return JSON.parse(new TextDecoder().decode(d));
+}
+function zustand(){ return {t:textWert().trim(), n:nameWert().trim(), b:st.bi?1:0, f:st.auto?0:st.fs}; }
+function seitenBasis(){
+  const eigen=location.href.split("#")[0];
+  const fremd=/claude|anthropic|usercontent/i.test(location.hostname) || !/^https?:/.test(location.protocol) || window.top!==window.self;
+  return (!fremd || !EINSTELLUNGEN.seitenUrl) ? eigen : EINSTELLUNGEN.seitenUrl;
+}
+let linkAktuell="", linkTimer=null;
+function planeLink(){ clearTimeout(linkTimer); linkTimer=setTimeout(baueLink,200); }
+async function baueLink(){
+  const anker=await packen(zustand());
+  linkAktuell=seitenBasis()+"#"+anker;
+  const mail=mailText(true);
+  let href=mailtoAus(mail);
+  if(href.length>EINSTELLUNGEN.mailtoMax) href=mailtoAus(mailText(false));
+  $("senden").href=href;
+  $("ausweich").value=mailText(true);
+}
+function mailText(mitWortlaut){
+  const z=zustand();
+  let s=`Hallo Team "Bürgerinitiative Lebenswertes Schlüchtern",\n\n`+
+    `ich habe mein Statement formuliert und würde mich freuen, wenn Ihr es für die Öffentlichkeitsarbeit der Bürgerinitiative zum Thema Gaskraftwerk verwendet.\n\n`+
+    `Link zu meinem Statement (dort als Grafik abrufbar):\n${linkAktuell}\n\n`+
+    `Viele Grüße\n${kontaktBlock()}\n\n(Kontaktdaten werden nicht veröffentlicht)`;
+  if(mitWortlaut) s+=`\n\n----------\nMein Statement im Wortlaut:\n\n${z.t}\n\n${zeigeName()}`;
+  return s;
+}
+function kontaktBlock(){
+  const w=id=>$(id).value.trim();
+  const ort=[w("kPlz"),w("kOrt")].filter(Boolean).join(" ");
+  const z=[w("kName"),w("kStrasse"),ort].filter(Boolean);
+  return z.length ? z.join("\n") : "<hier bitte Ihren Namen und Kontaktdaten eintragen>";
+}
+function mailtoAus(text){ return "mailto:"+EINSTELLUNGEN.mailAn+"?subject="+encodeURIComponent(EINSTELLUNGEN.betreff)+"&body="+encodeURIComponent(text); }
+
+/* ---------- Grafik als PNG ---------- */
+function zeilenUmbruch(ctx,text,maxW){
+  const zeilen=[];
+  for(const absatz of text.split("\n")){
+    const woerter=absatz.split(" "); let z="";
+    if(!absatz){zeilen.push("");continue;}
+    for(let w of woerter){
+      const probe=z?z+" "+w:w;
+      if(ctx.measureText(probe).width<=maxW){z=probe;continue;}
+      if(z)zeilen.push(z);
+      z="";
+      while(ctx.measureText(w).width>maxW){ let i=1; while(i<w.length&&ctx.measureText(w.slice(0,i+1)).width<=maxW)i++; zeilen.push(w.slice(0,i)); w=w.slice(i); }
+      z=w;
+    }
+    zeilen.push(z);
+  }
+  return zeilen;
+}
+function grafikCanvas(){
+  const c=document.createElement("canvas"); c.width=1080; c.height=1350; const ctx=c.getContext("2d");
+  zeichneGrund(ctx);
+  const t=textWert().replace(/\s+$/,""), fs=st.fs;
+  ctx.font=`700 ${fs}px "Arimo", Arial, sans-serif`; ctx.fillStyle=FARBE.text; ctx.textAlign="center"; ctx.textBaseline="middle";
+  const zl=zeilenUmbruch(ctx,t,BOX.w), lh=fs*LH, h=zl.length*lh;
+  let y=BOX.y+(BOX.h-h)/2+lh/2;
+  for(const z of zl){ ctx.fillText(z.replace(/ +/g," "),540,y); y+=lh; }
+  ctx.font=`700 ${st.nfs||NAME.max}px "Ubuntu", "Trebuchet MS", sans-serif`; ctx.fillStyle=FARBE.gruen;
+  ctx.fillText(zeigeName(),540,NAME.y+NAME.h/2+2);
+  return c;
+}
+let downloadsApi=null;
+async function speichereDatei(blob,name){
+  if(downloadsApi){ await downloadsApi.save({filename:name,data:blob}); return; }
+  const a=document.createElement("a"); a.href=URL.createObjectURL(blob); a.download=name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(()=>URL.revokeObjectURL(a.href),4000);
+}
+function dateiname(){
+  const n=nameWert().trim().toLowerCase().replace(/ä/g,"ae").replace(/ö/g,"oe").replace(/ü/g,"ue").replace(/ß/g,"ss").replace(/[^a-z0-9]+/g,"_").replace(/^_|_$/g,"");
+  return "statement_gaskraftwerk"+(n?"_"+n:"")+".png";
+}
+
+/* ---------- Kleinkram ---------- */
+let toastT; function toast(m){ const t=$("toast"); t.textContent=m; t.classList.add("an"); clearTimeout(toastT); toastT=setTimeout(()=>t.classList.remove("an"),2600); }
+async function kopiere(text, okMeldung){
+  try{ await navigator.clipboard.writeText(text); toast(okMeldung); }
+  catch(_){ const a=$("ausweich"); a.hidden=false; a.value=text; a.focus(); a.select(); toast("Text markiert: jetzt mit Strg+C bzw. Kopieren übernehmen"); }
+}
+const ENTWURF="bi_statement_entwurf";
+function entwurfSpeichern(){ try{ localStorage.setItem(ENTWURF,JSON.stringify(zustand())); }catch(_){} }
+function laden(z){
+  txt.textContent=[...(z.t||"")].slice(0,EINSTELLUNGEN.maxText).join(""); nameTxt.textContent=[...(z.n||"")].slice(0,EINSTELLUNGEN.maxName).join("");
+  st.bi=!!z.b; $("biBtn").setAttribute("aria-pressed",String(st.bi));
+  if(z.f){ st.auto=false; st.fs=Math.max(24,Math.min(80,+z.f)); } else st.auto=true;
+  $("autoBtn").setAttribute("aria-pressed",String(st.auto));
+}
+function skalieren(){ const r=$("rahmen"); const s=r.clientWidth/1080; $("buehne").style.transform=`scale(${s})`; r.style.height=(1350*s)+"px"; }
+
+/* ---------- Start ---------- */
+async function start(){
+  try{ await Promise.all([
+    document.fonts.load('92px "Archivo Black"'), document.fonts.load('700 48px "Arimo"'),
+    document.fonts.load('700 50px "Ubuntu"'), document.fonts.load('900 20px "Inter"')]); }catch(_){}
+  zeichneGrund($("grund").getContext("2d"));
+  editierbar(txt); editierbar(nameTxt);
+  begrenze(txt,EINSTELLUNGEN.maxText,false); begrenze(nameTxt,EINSTELLUNGEN.maxName,true);
+  $("zMax").textContent=EINSTELLUNGEN.maxText; $("nMax").textContent=EINSTELLUNGEN.maxName; $("nameMobil").maxLength=EINSTELLUNGEN.maxName;
+  $("txtMobil").addEventListener("input",e=>{ let v=e.target.value; if(len(v)>EINSTELLUNGEN.maxText){v=[...v].slice(0,EINSTELLUNGEN.maxText).join("");e.target.value=v;} txt.textContent=v; aktualisieren("mobil"); });
+  $("nameMobil").addEventListener("input",e=>{ nameTxt.textContent=e.target.value.replace(/\s+/g," "); aktualisieren("nameMobil"); });
+  $("biBtn").onclick=()=>{ st.bi=!st.bi; $("biBtn").setAttribute("aria-pressed",String(st.bi)); aktualisieren(); };
+  $("autoBtn").onclick=()=>{ st.auto=!st.auto; $("autoBtn").setAttribute("aria-pressed",String(st.auto)); aktualisieren(); };
+  const manuell=n=>{ st.auto=false; $("autoBtn").setAttribute("aria-pressed","false"); st.fs=Math.max(24,Math.min(80,n)); $("groesse").value=st.fs; aktualisieren(); };
+  $("groesse").oninput=e=>manuell(+e.target.value);
+  $("kleiner").onclick=()=>manuell(st.fs-2); $("groesser").onclick=()=>manuell(st.fs+2);
+  $("einv").onchange=pruefeSenden;
+  ["kName","kStrasse","kPlz","kOrt"].forEach(id=>$(id).addEventListener("input",()=>{ if(id==="kName") kNameEigen=$("kName").value.trim()!==""; pruefeSenden(); planeLink(); }));
+  $("senden").addEventListener("click",async e=>{
+    if(!pruefeSenden()){ e.preventDefault(); toast($("fehlt").textContent); return; }
+    toast("Ihr Mailprogramm sollte sich jetzt öffnen. Falls nicht: Mailtext kopieren.");
+  });
+  $("linkBtn").onclick=async()=>{ await baueLink(); kopiere(linkAktuell,"Link kopiert"); };
+  $("mailKopieren").onclick=async()=>{ await baueLink(); kopiere(mailText(true),"Mailtext kopiert. Adresse: "+EINSTELLUNGEN.mailAn); };
+  $("pngBtn").onclick=()=>{
+    if(!textWert().trim()){ toast("Bitte zuerst ein Statement schreiben"); return; }
+    grafikCanvas().toBlob(async b=>{ try{ await speichereDatei(b,dateiname()); }catch(err){ if(err&&err.code!=="declined") toast("Speichern hat hier nicht geklappt. Bitte die Seite im Browser öffnen."); } },"image/png");
+  };
+  new ResizeObserver(skalieren).observe($("rahmen")); skalieren();
+
+  let ausLink=false;
+  const h=location.hash.slice(1);
+  if(h.startsWith("st-")){ try{ laden(await entpacken(h)); ausLink=true; }catch(_){ toast("Der Link ist unvollständig. Bitte komplett kopieren."); } }
+  if(!ausLink){ try{ const d=JSON.parse(localStorage.getItem(ENTWURF)||"null"); if(d) laden(d); }catch(_){} }
+  $("banner").hidden=!ausLink;
+  aktualisieren();
+  if(window.claude && window.claude.use){ window.claude.use("downloads").then(d=>{downloadsApi=d;}).catch(()=>{}); }
+}
+window.addEventListener("hashchange",()=>{ const h=location.hash.slice(1); if(h.startsWith("st-")) entpacken(h).then(z=>{laden(z);$("banner").hidden=false;aktualisieren();}).catch(()=>{}); });
+start();
+</script>
+
+</body></html>
